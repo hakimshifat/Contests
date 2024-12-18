@@ -10,9 +10,9 @@
 *.lo
 *.o
 *.obj
-*.ans
-*.in
-*.out
+*.ans*
+*.in*
+*.out*
 
 # Precompiled Headers
 *.gch
