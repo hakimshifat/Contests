@@ -1,9 +1,3 @@
-# Ignore all files by default
-*
-
-# Allow only .cpp files
-!*.cpp
-
 # Ignore editor/IDE temporary files
 *.swp        # Vim swap files
 *.swo        # Vim swap files
@@ -20,6 +14,7 @@
 *.in*        # Input files
 *.ans*       # Answer files
 *.out*       # Output files
+*.exe
 
 # Ignore temporary or system files
 .DS_Store    # macOS metadata (not needed for Linux but safe to include)
