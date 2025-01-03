@@ -11,9 +11,6 @@
 *.log        # Log files
 
 # Ignore competitive programming input/output files
-*.in*        # Input files
-*.ans*       # Answer files
-*.out*       # Output files
 *.exe
 
 # Ignore temporary or system files
