@@ -8,15 +8,15 @@ using namespace std;
 void solve() {
   int gasStation, distance;
   cin >> gasStation >> distance;
-  vector<int> stations(gasStation);
-  for (auto &x : stations) {
-    cin >> x;
+  int prev = 0, ans = 0;
+  for (int i = 0; i < gasStation; i++) {
+    int a;
+    cin >> a;
+    ans = max(ans, a - prev);
+    prev = a;
   }
-  if (stations.size() == 1) {
-    cout << stations[0] << endl;
-    return;
-  }
-  cout << 2 * abs(stations[stations.size() - 1] - distance) << endl;
+  ans = max(ans, 2 * (distance - prev));
+  cout << ans << endl;
 }
 
 int32_t main() {

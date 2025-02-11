@@ -18,14 +18,14 @@ void solve() {
   }
 
   if (occ.size() >= 3) {
-    cout << "NO" << endl;
+    cout << "No" << endl;
     return;
   } else {
     if (abs(occ.begin()->second - occ.rbegin()->second) <= 1) {
-      cout << "YES" << endl;
+      cout << "Yes" << endl;
       return;
     } else {
-      cout << "NO" << endl;
+      cout << "No" << endl;
     }
   }
 }
