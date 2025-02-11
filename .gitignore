@@ -1,18 +1,11 @@
-# Ignore editor/IDE temporary files
-*.swp        # Vim swap files
-*.swo        # Vim swap files
-*~           # Backup files
-.idea/       # JetBrains IDE files
-.vscode/     # VS Code configuration files
+# Ignore everything by default
+*
 
-# Ignore compiled and generated files
-*.o          # Object files
-*.out        # Executable files
-*.log        # Log files
+# But do not ignore directories so that Git can traverse them.
+!*/
 
-# Ignore competitive programming input/output files
-*.exe
+# Un-ignore all .cpp files (in the root and any subdirectories)
+!**/*.cpp
 
-# Ignore temporary or system files
-.DS_Store    # macOS metadata (not needed for Linux but safe to include)
-Thumbs.db    # Windows metadata (not relevant for Linux)
+# Always track this .gitignore file
+!.gitignore
