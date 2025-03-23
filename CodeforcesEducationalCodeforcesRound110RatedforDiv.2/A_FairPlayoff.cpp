@@ -1,11 +1,12 @@
-// time-limit: 1000
-// problem-url: https://codeforces.com/problemset/problem/1789/A
+// time-limit: 2000
+// problem-url: https://codeforces.com/problemset/problem/1535/A
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
 #define int long long int
 #define pb push_back
 #define all(x) x.begin(), x.end()
+#define allr(x) x.rbegin(), x.rend()
 const int MOD = 1e9 + 7;
 const int maxN = 1e5 + 5;
 
@@ -26,23 +27,14 @@ long long power(long long base, long long exp) {
   cin.tie(nullptr)
 
 void solve() {
-  int n;
-  cin >> n;
-  vector<int> vc(n);
+  vector<int> vc(4);
   for (auto &x : vc)
     cin >> x;
-
-  bool bt = false;
-  for(int i = 0 ;i < n && !bt; i++){
-	  for(int j = i + 1 ; j < n ;j++){
-		  if(__gcd(vc[i], vc[j]) <= 2){
-			  bt = true;
-			  break;
-		  }
-	  }
-  }
-  cout << (bt ? "Yes" : "No") << endl;
-
+  if ((max(vc[0], vc[1]) < min(vc[2], vc[3])) ||
+      (min(vc[0], vc[1]) > max(vc[2], vc[3]))) {
+    cout << "NO" << endl;
+  } else
+    cout << "YES" << endl;
 }
 
 int32_t main() {

@@ -7,19 +7,6 @@ using namespace std;
 #define sp " "
 const int MOD = 1e9 + 7;
 
-void makedfPalindrome(string &str) {
-  int j = str.size() - 1;
-  for (int i = 0; i < str.size(); i++) {
-    if (str[i] == '?' && str[j] != '?') {
-      str[i] = str[j];
-      j--;
-    } else if (str[j] == '?' && str[i] != '?') {
-      str[j] = str[i];
-      j--;
-    }
-  }
-  cout << str << endl;
-}
 void makePalindrome(string &str) {
   int n = str.size();
   int i = 0, j = n - 1;
@@ -32,7 +19,7 @@ void makePalindrome(string &str) {
     } else if (str[j] == '?') {
       str[j] = str[i];
     } else if (str[i] != str[j]) {
-      cout << "Not possible to make a palindrome" << endl;
+      cout << -1 << endl;
       return;
     }
     i++;

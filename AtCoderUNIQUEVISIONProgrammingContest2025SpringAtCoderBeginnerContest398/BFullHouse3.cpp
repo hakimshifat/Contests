@@ -1,6 +1,7 @@
-// time-limit: 1000
-// problem-url: https://codeforces.com/problemset/problem/1789/A
+// time-limit: 2000
+// problem-url: https://atcoder.jp/contests/abc398/tasks/abc398_b
 #include <bits/stdc++.h>
+#include <unordered_map>
 using namespace std;
 #define endl '\n'
 #define int long long int
@@ -25,31 +26,24 @@ long long power(long long base, long long exp) {
   ios_base::sync_with_stdio(false);                                            \
   cin.tie(nullptr)
 
-void solve() {
-  int n;
-  cin >> n;
-  vector<int> vc(n);
-  for (auto &x : vc)
-    cin >> x;
-
-  bool bt = false;
-  for(int i = 0 ;i < n && !bt; i++){
-	  for(int j = i + 1 ; j < n ;j++){
-		  if(__gcd(vc[i], vc[j]) <= 2){
-			  bt = true;
-			  break;
-		  }
-	  }
-  }
-  cout << (bt ? "Yes" : "No") << endl;
-
-}
-
 int32_t main() {
-  fastio;
-  int test = 1;
-  cin >> test;
-  while (test--) {
-    solve();
+  unordered_map<int, int>(mp);
+  int n = 7;
+  while (n--) {
+    int input;
+    cin >> input;
+    mp[input]++;
   }
+  for (auto &x : mp) {
+    if (x.second >= 3) {
+      auto m = x;
+      for (auto &x : mp) {
+        if (x != m && x.second >= 2) {
+          cout << "Yes";
+          return 0;
+        }
+      }
+    }
+  }
+  cout << "No";
 }

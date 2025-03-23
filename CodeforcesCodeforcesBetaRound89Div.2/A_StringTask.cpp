@@ -1,5 +1,5 @@
-// time-limit: 1000
-// problem-url: https://codeforces.com/problemset/problem/1789/A
+// time-limit: 2000
+// problem-url: https://codeforces.com/problemset/problem/118/A
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
@@ -26,29 +26,26 @@ long long power(long long base, long long exp) {
   cin.tie(nullptr)
 
 void solve() {
-  int n;
-  cin >> n;
-  vector<int> vc(n);
-  for (auto &x : vc)
-    cin >> x;
-
-  bool bt = false;
-  for(int i = 0 ;i < n && !bt; i++){
-	  for(int j = i + 1 ; j < n ;j++){
-		  if(__gcd(vc[i], vc[j]) <= 2){
-			  bt = true;
-			  break;
-		  }
-	  }
+  string a, b;
+  cin >> a;
+  for (auto &c : a) {
+    c = tolower(c);
   }
-  cout << (bt ? "Yes" : "No") << endl;
-
+  b.push_back('.');
+  for (int i = 0; i < a.size(); i++) {
+    if (a[i] != 'a' && a[i] != 'e' && a[i] != 'i' && a[i] != 'o' &&
+        a[i] != 'u' && a[i] != 'y') {
+      b.push_back(a[i]);
+      b.push_back('.');
+    }
+  }
+  b.pop_back();
+  cout << b << endl;
 }
 
 int32_t main() {
   fastio;
   int test = 1;
-  cin >> test;
   while (test--) {
     solve();
   }

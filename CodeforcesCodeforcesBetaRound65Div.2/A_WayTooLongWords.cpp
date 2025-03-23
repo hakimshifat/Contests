@@ -1,5 +1,5 @@
 // time-limit: 1000
-// problem-url: https://codeforces.com/problemset/problem/1789/A
+// problem-url: https://codeforces.com/problemset/problem/71/A
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
@@ -26,23 +26,15 @@ long long power(long long base, long long exp) {
   cin.tie(nullptr)
 
 void solve() {
-  int n;
-  cin >> n;
-  vector<int> vc(n);
-  for (auto &x : vc)
-    cin >> x;
-
-  bool bt = false;
-  for(int i = 0 ;i < n && !bt; i++){
-	  for(int j = i + 1 ; j < n ;j++){
-		  if(__gcd(vc[i], vc[j]) <= 2){
-			  bt = true;
-			  break;
-		  }
-	  }
+  string s;
+  cin >> s;
+  if (s.size() > 10) {
+    cout << s[0] << s.size() - 2 << s[s.size() - 1] << endl;
+    return;
+  } else {
+    cout << s << endl;
+    return;
   }
-  cout << (bt ? "Yes" : "No") << endl;
-
 }
 
 int32_t main() {
